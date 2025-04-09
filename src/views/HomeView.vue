@@ -16,11 +16,11 @@ const modules = [Navigation, Mousewheel, Scrollbar, Autoplay];
         <div class="container">
             <section class="preview-section">
                 <div class="first-prev">
-                    <img src="../assets/media/preview/1.PNG" alt="">
+                    <img src="../assets/media/preview/1.webp" alt="">
                 </div>
                 <div class="mid-prev">
                     <div>
-                        <img src="../assets/media/preview/3.PNG" alt="">
+                        <img src="../assets/media/preview/3.webp" alt="">
                     </div>
                     <div class="prev-text">
                         <h2>ultimate</h2>
@@ -32,11 +32,11 @@ const modules = [Navigation, Mousewheel, Scrollbar, Autoplay];
                         <i class="fa-solid fa-cart-shopping"></i>
                     </BaseButton>
                     <div>
-                        <img src="../assets/media/preview/4.PNG" alt="">
+                        <img src="../assets/media/preview/4.webp" alt="">
                     </div>
                 </div>
                 <div class="last-prev">
-                    <img src="../assets/media/preview/2.PNG" alt="">
+                    <img src="../assets/media/preview/2.webp" alt="">
                 </div>
             </section>
 
