@@ -10,8 +10,6 @@ export const useCartStore = defineStore("cart", () => {
         try {
             const existIndex = cart.value.findIndex(v => v.id === product.id)
             if (existIndex !== -1) {
-                console.log(existIndex);
-                // Optional: Increase quantity if already exists
                 cart.value[existIndex].orderQuantity++;
                 localStorage.setItem('cartItems', JSON.stringify(cart.value))
                 return;
@@ -40,6 +38,7 @@ export const useCartStore = defineStore("cart", () => {
             }
         }
     };
+
     // Update cart from local storage
     watch(cart, (newCart) => {
         localStorage.setItem('cartItems', JSON.stringify(newCart))
