@@ -1,0 +1,49 @@
+.cart-item {
+  display: flex;
+  gap: 8px;
+  img {
+    width: 7rem;
+    height: 6.5rem;
+  }
+  h1,
+  h2,
+  h3 {
+    font-size: $font-size-base;
+  }
+  .item-content {
+    width: 70%;
+    white-space: nowrap;
+    text-transform: capitalize;
+    h1,
+    h2 {
+      font-size: $font-size-base;
+    }
+    h2 {
+      margin-top: 6px;
+    }
+    .pagination {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-self: flex-end;
+      font-weight: 500;
+      border: 2px solid $color-primary;
+      h3 {
+        color: $color-primary;
+        text-align: center;
+        padding: 0 6px;
+      }
+      button {
+        padding: 6px;
+        color: $color-light;
+        cursor: pointer;
+        background-color: $color-primary;
+        border: none;
+        outline: none;
+        @include respond(sm) {
+          padding: 4px;
+        }
+      }
+    }
+  }
+}

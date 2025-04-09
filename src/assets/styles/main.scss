@@ -1,0 +1,19 @@
+// main.scss
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/reset";
+@import "base/globals";
+
+@import "layout/header";
+@import "layout/cart";
+@import "layout/footer";
+@import "layout/products";
+
+@import "components/button";
+@import "components/cartItem";
+@import "components/card";
+@import "components/teleport";
+
+@import "pages/preview-section";
+@import "pages/product-details";

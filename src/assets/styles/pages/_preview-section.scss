@@ -1,0 +1,91 @@
+.home {
+  .preview-section {
+    display: flex;
+    gap: 12px;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    color: $color-primary;
+    justify-content: center;
+    width: 100%;
+    @include respond(sm) {
+      flex-direction: column;
+      .first-prev,
+      .last-prev {
+        img {
+          display: none;
+        }
+      }
+    }
+    .first-prev {
+      img {
+        height: 99%;
+      }
+    }
+    .mid-prev {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+
+      .prev-text {
+        h1,
+        h2 {
+          font-family: "Monoton", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+        }
+        h1 {
+          font-size: 7rem;
+        }
+        h2 {
+          font-size: 3rem;
+        }
+        @include respond(lg) {
+          h1 {
+            font-size: 3rem;
+          }
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+      p {
+        font-size: 1.25rem;
+        color: $color-secondary;
+        text-shadow: 1px 1px 0.6px $color-primary;
+
+        @include respond(lg) {
+          font-size: 0.9rem;
+          text-shadow: 1px 1px 0.5px $color-primary;
+        }
+      }
+      button {
+        text-transform: uppercase;
+        width: 80%;
+        padding: 1.125rem;
+        margin: 8px 0;
+        font-size: 1.12rem;
+        border-radius: 0.825rem;
+        gap: 20px;
+        @include respond(lg) {
+          width: 85%;
+          font-size: 0.8rem;
+          margin: 8px 0;
+          padding: 0.8rem;
+        }
+        @include respond(sm) {
+          width: 80%;
+          font-size: 0.7rem;
+        }
+      }
+    }
+    img {
+      border-radius: 12px;
+      width: 100%;
+    }
+    @include respond(md) {
+      font-size: 1.5rem;
+    }
+  }
+}

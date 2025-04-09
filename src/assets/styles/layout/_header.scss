@@ -1,0 +1,130 @@
+header {
+  background-color: $color-bg;
+  color: $color-text;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .toggle-nav {
+      display: none;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: $font-size-base;
+      color: $color-primary;
+
+      @include respond(md) {
+        display: block;
+      }
+    }
+
+    .nav {
+      display: flex;
+      gap: $spacing-md;
+
+      @include respond(md) {
+        display: none;
+      }
+
+      .nav-item {
+        text-transform: capitalize;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+        color: $color-primary;
+        font-size: $font-size-base;
+        word-break: keep-all;
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+    .small-nav {
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vh;
+      width: 50%;
+      background-color: $color-bg;
+      border-right: 1px solid $color-primary;
+      transition: all 0.4s;
+      z-index: 10;
+      @include respond(sm) {
+        width: 70%;
+      }
+      padding: 4px 12px;
+      .toggle-nav {
+        cursor: pointer;
+        font-size: $font-size-base;
+        color: $color-primary;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+    }
+    .icons {
+      display: flex;
+      gap: $spacing-md;
+      align-items: center;
+
+      @include respond(md) {
+        gap: $spacing-xs;
+      }
+
+      .icon-button {
+        position: relative;
+        border: none;
+        padding: 10px;
+        border-radius: $radius-full;
+        background-color: $color-muted;
+        color: $color-primary;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s;
+
+        @include respond(md) {
+          padding: 6px;
+          font-size: small;
+        }
+        &:hover {
+          background-color: $color-primary;
+          color: $color-light;
+        }
+        .cart-badge {
+          position: absolute;
+          top: 0;
+          left: -5%;
+          background-color: $color-primary;
+          color: #fff;
+          border-radius: 50%;
+          font-size: 0.6rem;
+          padding: 0.1rem 0.2rem;
+          @include respond(md) {
+            font-size: 0.5rem;
+            top: -10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

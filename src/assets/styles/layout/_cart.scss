@@ -1,0 +1,116 @@
+.cart {
+  background-color: $color-bg;
+  color: $color-text;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 30%;
+  padding: 12px 15px;
+  padding-bottom: 0;
+  border-left: 1px solid $color-primary;
+  overflow-y: auto;
+  @include respond(lg) {
+    width: 40%;
+  }
+  @include respond(md) {
+    width: 50%;
+  }
+  @include respond(sm) {
+    width: 85%;
+  }
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      text-transform: capitalize;
+      font-size: $font-size-lg;
+      color: $color-primary;
+      border-bottom: 2px solid $color-primary;
+    }
+    .toggle-cart {
+      border: transparent;
+      background: transparent;
+      font-size: $font-size-lg;
+      cursor: pointer;
+      color: $color-primary;
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+  .cart-items {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .empty-cart {
+      height: 90vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-size: $font-size-base;
+        font-weight: bold;
+        color: $color-secondary;
+        text-transform: capitalize;
+        font-style: italic;
+      }
+    }
+    .items {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 92vh;
+      hr {
+        margin: 6px 0;
+      }
+      .checkout {
+        background-color: $color-bg;
+        border: 2px solid $color-primary;
+        border-bottom: none;
+        width: 100%;
+        padding: 12px;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.25rem;
+        button {
+          gap: 5px;
+          width: 100%;
+        }
+        .details {
+          h4 {
+            font-size: $font-size-base;
+            display: flex;
+            justify-content: space-between;
+            font-weight: lighter;
+            color: rgb(114, 113, 113);
+          }
+        }
+      }
+    }
+  }
+}
+
+.cart-fade-enter-from,
+.cart-fade-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.cart-fade-enter-to,
+.cart-fade-leave-from {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.cart-fade-enter-active,
+.cart-fade-leave-active {
+  transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

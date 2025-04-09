@@ -1,0 +1,90 @@
+footer {
+  border-top: 1px solid $color-secondary;
+  .footer-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .footer-links {
+      font-size: $font-size-base;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: end;
+      @include respond(md) {
+        justify-content: start;
+        gap: 0.6rem;
+        font-size: 0.825rem;
+      }
+      a {
+        white-space: nowrap;
+        text-transform: capitalize;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 400;
+        color: rgb(109, 109, 109);
+        text-decoration: none;
+        transition: all 0.3s;
+        &:hover {
+          color: $color-primary;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .payments {
+    margin: 1.225rem auto 0;
+    border-bottom: 1px solid $color-secondary;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    @include respond(md) {
+      margin: 1rem auto 0;
+      gap: 0.5rem;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-self: flex-start;
+      gap: 6px;
+
+      a {
+        width: 1.825rem;
+        text-decoration: none;
+        color: $color-primary;
+        padding: 6px;
+        font-size: $font-size-base;
+        border: 1px solid $color-primary;
+        border-radius: $radius-md;
+        box-shadow: 1px 1px 1px $color-secondary;
+        @include respond(md) {
+          font-size: 15px;
+          width: 1.6em;
+          border-radius: $radius-sm;
+          padding: 4px;
+        }
+      }
+    }
+    .methods {
+      ul {
+        list-style: none;
+        display: flex;
+        @include respond(md) {
+          img {
+            width: 3rem;
+          }
+        }
+      }
+    }
+  }
+  .copy-right {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    color: rgba(128, 128, 128, 0.903);
+    @include respond(md) {
+      font-size: 12px;
+    }
+  }
+}

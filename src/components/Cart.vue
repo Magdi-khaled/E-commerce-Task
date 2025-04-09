@@ -1,0 +1,54 @@
+<script setup>
+import { computed, ref, watch } from 'vue';
+import CartItem from './CartItem.vue';
+import BaseButton from '@/components/BaseButton.vue';
+import { useCartStore } from '@/stores/cart';
+
+const showCart = defineModel('showCart');
+const cartStore = useCartStore();
+const cartItems = ref([...cartStore.cart]);
+
+watch(cartStore.cart, (newVal) => {
+    cartItems.value = newVal;
+});
+
+const totalPrice = computed(() => {
+    return cartItems.value.reduce((sum, item) => sum + item.price, 0)
+})
+</script>
+<template>
+    <teleport to='body'>
+        <transition name="cart-fade">
+            <div v-if="showCart" class="cart">
+                <div class="cart-header">
+                    <h1>shopping cart</h1>
+                    <button @click="showCart = !showCart" class="toggle-cart">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="cart-items">
+                    <section v-if="!cartItems.length" class="empty-cart">
+                        <p>cart is empty</p>
+                    </section>
+                    <section v-else class="items">
+                        <div>
+                            <div v-for="item in cartItems" :key="item.id">
+                                <CartItem :item="item" />
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="checkout">
+                            <div class="details">
+                                <!-- <h3>checkout details</h3> -->
+                                <h4> Total price <span>{{ totalPrice }}$</span></h4>
+                            </div>
+                            <BaseButton>
+                                checkout <i class="fa-solid fa-arrow-right"></i>
+                            </BaseButton>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </transition>
+    </teleport>
+</template>

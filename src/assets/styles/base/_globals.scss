@@ -1,0 +1,29 @@
+@import "reset";
+
+html,
+body {
+  font-family: $font-base;
+  color: $color-text;
+  background-color: $color-bg;
+  scroll-behavior: smooth;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 10px 25px;
+  .brand-name {
+    font-size: $font-size-lg;
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $color-primary;
+    @include respond(md) {
+      font-size: $font-size-base;
+    }
+  }
+}

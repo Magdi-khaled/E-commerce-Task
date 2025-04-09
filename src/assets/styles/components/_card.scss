@@ -1,0 +1,39 @@
+.product-card {
+  position: relative;
+  .colors {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    span {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: $radius-full;
+
+      @include respond(md) {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+    }
+  }
+
+  button.add-to-cart {
+    width: fit-content !important;
+    position: absolute;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: $font-size-xl;
+    bottom: 4%;
+    right: 1%;
+    transition: all 0.25s;
+
+    @include respond(md) {
+      font-size: $font-size-lg;
+    }
+    &:hover {
+      color: #00000072;
+    }
+  }
+}
