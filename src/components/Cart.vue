@@ -6,15 +6,19 @@ import { useCartStore } from '@/stores/cart';
 
 const showCart = defineModel('showCart');
 const cartStore = useCartStore();
-const cartItems = ref([...cartStore.cart]);
 
 watch(cartStore.cart, (newVal) => {
-    cartItems.value = newVal;
+    cartStore.cart = newVal;
 });
 
 const totalPrice = computed(() => {
-    return cartItems.value.reduce((sum, item) => sum + item.price, 0)
-})
+    return cartStore.cart.reduce((sum, item) => {
+        const price = (item.price);
+        const quantity = (item.orderQuantity);
+        return sum + (price * quantity);
+    }, 0);
+});
+
 </script>
 <template>
     <teleport to='body'>
@@ -27,12 +31,12 @@ const totalPrice = computed(() => {
                     </button>
                 </div>
                 <div class="cart-items">
-                    <section v-if="!cartItems.length" class="empty-cart">
+                    <section v-if="!cartStore.cart.length" class="empty-cart">
                         <p>cart is empty</p>
                     </section>
                     <section v-else class="items">
                         <div>
-                            <div v-for="item in cartItems" :key="item.id">
+                            <div v-for="item in cartStore.cart" :key="item.id">
                                 <CartItem :item="item" />
                                 <hr>
                             </div>
