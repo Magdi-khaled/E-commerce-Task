@@ -1,26 +1,20 @@
 <script setup>
 import { useCartStore } from '@/stores/cart';
-import { ref, watch } from 'vue';
-import BaseTeleport from '@/components/BaseTeleport.vue';
+import { ref } from 'vue';
+import BaseTeleport from './BaseTeleport.vue';
 
 const props = defineProps({
     item: { type: Object, required: true }
 });
-
 const cartStore = useCartStore();
-
-const quantity = ref(props.item.orderQuanity ?? 1);
 const message = ref(false);
 
-watch(quantity, (newVal) => {
-    if (newVal === 0) {
-        cartStore.removeFromCart(props.item);
+const handleQuantity = async (increase) => {
+    if (!increase && props.item.orderQuantity === 1) {
         message.value = true;
         setTimeout(() => { message.value = false }, 1500);
     }
-})
-const handleQuantity = (increase) => {
-    increase ? quantity.value++ : quantity.value--;
+    await cartStore.updateQuantity(props.item.id, increase ? 1 : -1);
 };
 </script>
 
@@ -32,7 +26,7 @@ const handleQuantity = (increase) => {
                 <i class="fa-solid fa-minus"></i>
             </button>
         </div>
-        <h3>{{ props.item.orderQuanity }} </h3>
+        <h3>{{ props.item.orderQuantity }} </h3>
         <div>
             <button @click="handleQuantity(true)">
                 <i class="fa-solid fa-plus"></i>

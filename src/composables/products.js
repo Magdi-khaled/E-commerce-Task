@@ -6,7 +6,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product33.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product31.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product28.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product29.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product30.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 6,
@@ -51,7 +51,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product11.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 7,
@@ -60,7 +60,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product12.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 8,
@@ -69,7 +69,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product16.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 9,
@@ -78,7 +78,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product22.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
     {
         id: 10,
@@ -87,7 +87,7 @@ const products = [
         sizes: ['XL', 'L', 'MD', 'SM',],
         colors: ["978877", "43696c", "751e1e", "1e1e1e"],
         image: '/assets/products/product23.webp',
-        orderQuanity: 1
+        orderQuantity: 1
     },
 ]
 export default products;
